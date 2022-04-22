@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+    // parents[0] = grandparent
+    // parents[1] = parent
+    
     void preorder(TreeNode *root, vector<int> parents ,int &sum){
         
         if(!root)

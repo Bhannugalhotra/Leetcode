@@ -21,7 +21,7 @@ public:
         }
     }
     
-    string generate_key(string &s){
+    string generate_key(){
         
         string key;
         
@@ -40,7 +40,7 @@ public:
         string key;
         
         do{
-            key = generate_key(longUrl);
+            key = generate_key();
             
         }while(hash_map.count(key));  // for handling collision
         

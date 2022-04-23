@@ -1,6 +1,6 @@
 class Solution 
 {
-    const int LEN = 3;
+    const int LEN = 5;
     vector<char> set;
     unordered_map<string, string> hash_map;
     

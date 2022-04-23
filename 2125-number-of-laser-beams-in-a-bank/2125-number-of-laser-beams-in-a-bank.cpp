@@ -8,8 +8,7 @@ public:
         for(int i = 0; i < bank.size(); i++){
             
             int count = std:: count(begin(bank[i]), end(bank[i]), '1');
-            
-            cout << count<<endl;
+        
             if(count == 0)
                 continue;
             

@@ -3,6 +3,7 @@ class Solution
     const int LEN = 5;
     vector<char> set;
     unordered_map<string, string> hash_map;
+    unordered_map<string,string> urls;
     
 public:
     
@@ -37,6 +38,9 @@ public:
     }
     string encode(string longUrl) {
         
+        if(urls.count(longUrl))
+            return "http://tinyurl.com/" + urls[longUrl];
+        
         string key;
         
         do{
@@ -45,7 +49,7 @@ public:
         }while(hash_map.count(key));  // for handling collision
         
         hash_map[key] = longUrl;
-        
+        urls[longUrl] = key;
         return "http://tinyurl.com/" + key;
     }
 

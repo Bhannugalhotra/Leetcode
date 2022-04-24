@@ -34,15 +34,12 @@ public:
                 if(!q.empty())
                     q.push(nullptr);
                 
-                if(leftToRight){
-                    ans.push_back(currentLevel);
-                }
-                
-                else{
+                if(!leftToRight){
                     reverse(currentLevel.begin(), currentLevel.end());
-                    ans.push_back(currentLevel);
                 }
                 
+                ans.push_back(currentLevel);
+    
                 currentLevel.clear();
                 leftToRight = !leftToRight;
                 

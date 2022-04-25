@@ -13,7 +13,7 @@ class LinkedList{
     
     public:
     
-    const int MAX_LEVEL = 6;
+    const int MAX_LEVEL = 5;
     
     Node *head;
     Node *tail;

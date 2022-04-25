@@ -6,9 +6,8 @@ class Node{
     int data;
     Node *next;
     Node *down;
-    Node *up;
     
-    Node(int d = 0) : data(d), next(NULL), down(NULL), up(NULL) {};
+    Node(int d = 0) : data(d), next(NULL), down(NULL) {};
 };
 class LinkedList{
     
@@ -33,9 +32,6 @@ class LinkedList{
             itr1 -> down = new Node(INT_MIN);
             itr2 -> down = new Node(INT_MAX);
             
-            itr1 -> down -> up = itr1;
-            itr2 -> down -> up = itr2;
-            
             itr1 = itr1 -> down;
             itr2 = itr2 -> down;
             
@@ -45,31 +41,13 @@ class LinkedList{
     
     
     void insertInList(Node *itr, stack<Node*> &onPath, int val){
-        
-        // if(val == 9){
-        //     cout << "in insert IN lIst" << endl;
-        //     cout << endl;
-        // }
-        
-        
-        
+          
         while(itr -> next -> data < val){
             itr = itr -> next;
         }
         
-        // if(val == 9){
-        //     cout << val << endl;
-        // }
-        
-        // if(itr -> next -> data == val)
-        //     return;
-        
-        
         Node *temp = new Node(val);
         
-        // if(val == 9){
-        //     cout << temp ->data << endl;
-        // }
         temp -> next = itr -> next;
         itr -> next = temp;
         
@@ -85,7 +63,6 @@ class LinkedList{
             Node *curr = new Node(val);
             
             curr -> down = temp;
-            temp -> up = curr;
             
             temp = curr;
             
@@ -96,11 +73,8 @@ class LinkedList{
             
             level++;
             
-           // cout << "level UP  " << level <<endl;
         }
-        
-        // if(val == 9)
-        // cout << "end" << endl;
+     
     }
     void insert(int val){
         
@@ -179,9 +153,6 @@ class LinkedList{
                 Node *temp = itr -> next;
                 itr -> next = temp -> next;
                 
-                if(temp -> down)
-                temp -> down -> up = nullptr;
-                
                 delete(temp);
                 
                 itr = itr -> down;
@@ -208,26 +179,16 @@ public:
     
     bool search(int target) {
         
-        if(target == 9){
-            
-            //List.PrintList();
-            cout << " IN search " << endl;
-        }
-       // List.PrintList();
         return List.Search(target);
     }
     
     void add(int num) {
         
-        if(num == 0)
-            cout << "add " << endl;
         List.insert(num);
     }
     
     bool erase(int num) {
         
-        if(num == 9)
-            cout << "erase" << endl;
         bool res = List.Search(num);
         
         if(res == false)

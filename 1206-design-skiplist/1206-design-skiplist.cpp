@@ -40,7 +40,7 @@ class LinkedList{
     }
     
     
-    void insertInList(Node *itr, stack<Node*> &onPath, int val){
+    void insertInList(Node *itr, vector<Node*> &onPath, int val){
           
         while(itr -> next -> data < val){
             itr = itr -> next;
@@ -66,7 +66,7 @@ class LinkedList{
             
             temp = curr;
             
-            Node *prev = onPath.top();  onPath.pop();
+            Node *prev = onPath.back();  onPath.pop_back();
             
             curr -> next = prev -> next;
             prev -> next = curr;
@@ -78,7 +78,7 @@ class LinkedList{
     }
     void insert(int val){
         
-        stack<Node*> onPath;
+        vector<Node*> onPath;
         
         Node *itr = head;
         
@@ -94,7 +94,7 @@ class LinkedList{
             }
             
             else{
-                onPath.push(itr);
+                onPath.push_back(itr);
                 itr = itr -> down;
             }
             

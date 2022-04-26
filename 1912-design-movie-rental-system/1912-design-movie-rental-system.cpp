@@ -125,6 +125,9 @@ public:
     }
 };
 
+static bool     _foo = ios::sync_with_stdio(false);
+static ostream* _bar = cin.tie(NULL);
+
 /**
  * Your MovieRentingSystem object will be instantiated and called as such:
  * MovieRentingSystem* obj = new MovieRentingSystem(n, entries);

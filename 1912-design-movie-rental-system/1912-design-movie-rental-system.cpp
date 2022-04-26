@@ -61,14 +61,7 @@ class Movie{
     }
 };
 
-// class RentedMovies{
-    
-//     public:
-    
-//     set<vector<int>> movies;
-    
-    
-// }
+
 class MovieRentingSystem 
 {
     
@@ -92,13 +85,11 @@ public:
     
     vector<int> search(int movie) {
         
-       // cout <<1<<endl;
         return movieMap[movie].CheapestFiveShops();
     }
     
     void rent(int shop, int movie) {
         
-     //   cout << 2 << endl;
         movieMap[movie].RemoveShop(shop);
         
         int price = movieMap[movie].Price(shop);
@@ -107,7 +98,6 @@ public:
     
     void drop(int shop, int movie) {
         
-       // cout << 3 << endl;
         int price = movieMap[movie].Price(shop);
         
         movieMap[movie].AddShop(shop, price);

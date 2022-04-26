@@ -56,7 +56,7 @@ class Solution
     vector<string> ans;
 public:
     
-    void Backtrack(string &s,int idx,Trie &trie, vector<string> curr){
+    void Backtrack(string &s,int idx,Trie &trie, vector<string> &curr){
         
         if(idx >= s.size()){
             string x = curr[0];
@@ -65,6 +65,7 @@ public:
                 x += " " + curr[i];
             
             ans.emplace_back(x);
+           
             return;
         }
         
@@ -93,7 +94,8 @@ public:
             trie.Insert(x);
         }
         
-        Backtrack(s, 0, trie, {});
+        vector<string> curr;
+        Backtrack(s, 0, trie, curr);
         
         return ans;
     }

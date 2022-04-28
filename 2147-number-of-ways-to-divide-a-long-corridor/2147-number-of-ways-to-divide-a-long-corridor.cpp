@@ -21,7 +21,7 @@ public:
             if(c == 'S')
                 prevSeats++;
             
-            //when one segment is completes i.e two seats
+            //when one segment is completed i.e two seats
             //then starts counting plants until the another seat
             else if(prevSeats == 2)
                 currPlants++;

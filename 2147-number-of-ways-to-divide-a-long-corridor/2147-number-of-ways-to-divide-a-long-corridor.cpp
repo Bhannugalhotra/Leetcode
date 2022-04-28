@@ -21,11 +21,14 @@ public:
             if(c == 'S')
                 prevSeats++;
             
+            //when one segment is completes i.e two seats
+            //then starts counting plants until the another seat
             else if(prevSeats == 2)
                 currPlants++;
             
             if(prevSeats > 2){
                 
+                // positions will be currPlants + 1 where we can install driver
                 ans = (ans * (currPlants + 1)) % mod;
                 
                 currPlants = 0;

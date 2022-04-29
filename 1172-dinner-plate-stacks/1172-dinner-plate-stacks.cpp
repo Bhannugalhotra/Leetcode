@@ -53,28 +53,10 @@ public:
         
       
         int currIdx = *filled.rbegin();
-//         print();
-//         cout <<"CurrIdx"<< currIdx << endl;
-        
+
         return popAtStack(currIdx);
     }
     
-    void print(){
-        
-        cout << "current stack is :" << endl;
-        for(stack<int> s : data){
-            
-            while(!s.empty()){
-                cout << s.top() << " ";
-                s.pop();
-
-            }
-            
-            cout << endl;
-        }
-        
-        cout << "end " <<endl;
-    }
     
     int popAtStack(int index) {
         

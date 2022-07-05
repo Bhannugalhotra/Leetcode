@@ -20,6 +20,9 @@ public:
             
             map[num - left_count] = total_count;
             map[num + right_count] = total_count;
+            
+            // this step is important because we are use if conditon to 
+            // check if map[num] > 0
             map[num] = total_count;
             
             ans = max(ans, total_count);

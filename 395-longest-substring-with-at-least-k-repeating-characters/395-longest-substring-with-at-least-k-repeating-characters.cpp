@@ -2,7 +2,6 @@ class Solution {
 public:
     int longestSubstring(string s, int k) {
         
-      
         if(s.size() == 0)
             return 0;
         
@@ -12,21 +11,21 @@ public:
             map[c]++;
         }
         
-        unordered_set<char> set;
+        unordered_set<char> lower_freq_elem;
         
         for(auto it : map){
             if(it.second < k)
-                set.insert(it.first);
+                lower_freq_elem.insert(it.first);
         }
         
-        if(set.size() == 0)
+        if(lower_freq_elem.size() == 0)
             return s.size();
         
         string x;
         int ans = 0;
         for(char c : s){
             
-            if(set.count(c)){
+            if(lower_freq_elem.count(c)){
                 ans = max(ans, longestSubstring(x, k));
                 x = "";
             }

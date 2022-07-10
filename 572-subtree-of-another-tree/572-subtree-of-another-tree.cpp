@@ -32,6 +32,7 @@ public:
         
         if(s == hash){
             ans = true;
+            return "";
         }
         
        

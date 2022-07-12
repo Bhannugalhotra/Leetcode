@@ -35,16 +35,31 @@ public:
         postorder(root);
         
         int max_freq = 0;
-        
-        for(auto &it : freq)
-            max_freq = max(max_freq , it.second);
-        
         vector<int> ans;
+        
+        //first way
+//         for(auto &it : freq)
+//             max_freq = max(max_freq , it.second);
+        
+        
+//         for(auto &it : freq){
+            
+//             if(it.second == max_freq)
+//                 ans.push_back(it.first);
+//         }
+        
+        //second way
         
         for(auto &it : freq){
             
-            if(it.second == max_freq)
+            if(it.second > max_freq){
+                max_freq = it.second;
+                ans.clear();
+            }
+            
+            if(it.second == max_freq){
                 ans.push_back(it.first);
+            }
         }
         
         return ans;

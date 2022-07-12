@@ -10,11 +10,7 @@ public:
         
         if(idx == mat.size())
             return abs(target - sum);
-        
-        //pruning
-        // if(sum > target)
-        //     return abs(target - sum);
-
+       
         if(dp[idx][sum] != -1)
             return dp[idx][sum];
         
@@ -23,6 +19,9 @@ public:
         for(int j = 0; j < mat[idx].size(); j++){
             
             minDiff = min(minDiff, backtrack(mat, idx + 1, sum + mat[idx][j], target));
+            
+            if(minDiff == 0)
+                break;
         }
         
         return dp[idx][sum] = minDiff;

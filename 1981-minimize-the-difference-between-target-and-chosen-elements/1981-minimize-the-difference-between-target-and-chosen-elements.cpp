@@ -30,9 +30,7 @@ public:
         
         memset(dp, -1, sizeof(dp));
         
-        // for pruning
-        for(vector<int> &v : mat)
-            sort(begin(v), end(v));
+     
         
         return backtrack(mat,0,0, target );
     }

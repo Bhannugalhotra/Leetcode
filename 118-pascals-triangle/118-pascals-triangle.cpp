@@ -10,11 +10,13 @@ public:
         int row = 1;
         while(row < numRows)
         {
-            ans.push_back({1});
-            for(int i = 1; i < ans[row-1].size(); i++)
-                ans[row].push_back(ans[row-1][i] + ans[row-1][i-1]);
+            vector<int> temp{1};
             
-            ans[row].push_back(1);
+            for(int i = 1; i < ans.back().size(); i++)
+                temp.push_back(ans.back()[i] + ans.back()[i-1]);
+            
+            temp.push_back(1);
+            ans.push_back(temp);
             row++;
         }
         

@@ -30,6 +30,9 @@ public:
         TreeNode *root = new TreeNode(postorder[idx]);
             idx--;
         
+        if(left == right)
+            return root;
+        
         int m = find(inorder, root -> val, left, right);
         
         root -> right = build(idx, m+1, right, inorder, postorder);

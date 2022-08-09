@@ -15,7 +15,7 @@ public:
         for(int i = 0; i < a.size() and a[i] < num ; i++){
             
             int root = a[i];
-            if(num % root == 0 and set.count(root) and set.count(num / root))
+            if(num % root == 0 and set.count(num / root))
                 ans = (ans + backtrack(root, a) * backtrack(num/root,a) % mod) % mod;
         }
         
